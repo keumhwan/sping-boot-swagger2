@@ -1,13 +1,18 @@
 package com.example.spingbootswagger2.domain.controller;
 
 import com.example.spingbootswagger2.domain.dto.UserOne;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@Tag(name = "사용자 API", description = "사용자 관련 API")
 @RestController
+@RequestMapping(value = "/api/user")
 public class UserController {
+    @Tag(name = "사용자 API", description = "사용자 목록 조회")
     @GetMapping(value = "/users")
     public List<UserOne> users() {
         return List.of(

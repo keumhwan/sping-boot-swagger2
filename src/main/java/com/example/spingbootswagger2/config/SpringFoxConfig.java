@@ -17,7 +17,7 @@ public class SpringFoxConfig implements WebMvcConfigurer {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.any())
+                .apis(RequestHandlerSelectors.basePackage("com.example.spingbootswagger2.domain"))
                 .paths(PathSelectors.any())
                 .build();
     }
